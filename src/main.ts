@@ -28,45 +28,47 @@ function randomRarity(): Rarity {
     return RARITIES[Math.floor(Math.random() * RARITIES.length)];
 }
 
+const url = `${import.meta.env.BASE_URL}`;
+
 const contributors: Contributor[] = [
     {
     name: 'PhrogPollen',
-    profile: '/phrog.png',
+    profile: `${url}/phrog.png`,
     roles: ['Director', 'Artistic Director', 'Artist'],
     blurb: 'Christian YouTuber and artist.',
     rarity: 'Ultra Rare',
   },
   {
     name: 'Ms. Artist',
-    profile: '/placeholder.png',
+    profile: `${url}/placeholder.png`,
     roles: ['Artistic Director', 'Artist'],
     blurb: 'Loves to make gacha character splash art.',
     rarity: randomRarity(),
   },
   {
     name: 'Mr. Coder',
-    profile: '/placeholder.png',
+    profile: `${url}/placeholder.png`,
     roles: ['Coder'],
     blurb: 'Knows many languages, but is most fluent in GDScript and C#.',
     rarity: randomRarity(),
   },
   {
     name: 'Ms. Writer',
-    profile: '/placeholder.png',
+    profile: `${url}/placeholder.png`,
     roles: ['Writer', 'Researcher'],
     blurb: 'Writes stories and reads scripture.',
     rarity: randomRarity(),
   },
   {
     name: 'Mr. Business',
-    profile: '/placeholder.png',
+    profile: `${url}/placeholder.png`,
     roles: ['Business', 'Marketing'],
     blurb: 'Give him five talents and he\'ll come back with ten.',
     rarity: randomRarity(),
   },
   {
     name: 'Ms. Voice Actor',
-    profile: '/placeholder.png',
+    profile: `${url}/placeholder.png`,
     roles: ['Voice Actor', 'Musician', 'Social Media'],
     blurb: 'Her favorite Bible verse is Psalm 33:3.',
     rarity: randomRarity(),
