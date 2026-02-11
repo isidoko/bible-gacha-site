@@ -2,7 +2,7 @@ import './style.css';
 
 // Types
 
-type Rarity = 'Common' | 'Uncommon' | 'Rare' | 'Super Rare' | 'Ultra Rare';
+type Rarity = 'R' | 'SR' | 'SSR';
 
 interface Contributor {
     name: string;
@@ -14,14 +14,12 @@ interface Contributor {
 
 // Data
 
-const RARITIES: Rarity[] = ['Common', 'Uncommon', 'Rare', 'Super Rare', 'Ultra Rare'];
+const RARITIES: Rarity[] = ['R', 'SR', 'SSR'];
 
 const RARITY_COLORS: Record<Rarity, string> = {
-    'Common': 'border-gray-400 text-gray-400',
-    'Uncommon': 'border-avocado text-avocado',
-    'Rare': 'border-blue-400 text-blue-400',
-    'Super Rare': 'border-purple-400 text-purple-400',
-    'Ultra Rare': 'border-cream-can text-cream-can',
+    'R': 'border-gray-400 text-gray-400',
+    'SR': 'border-blue-400 text-blue-400',
+    'SSR': 'border-cream-can text-cream-can',
 };
 
 function randomRarity(): Rarity {
@@ -36,7 +34,7 @@ const contributors: Contributor[] = [
     profile: `${url}/phrog.png`,
     roles: ['Director', 'Artistic Director', 'Artist'],
     blurb: 'Christian YouTuber and artist.',
-    rarity: 'Ultra Rare',
+    rarity: 'SSR',
   },
   {
     name: 'Ms. Artist',
