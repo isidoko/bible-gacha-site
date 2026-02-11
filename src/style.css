@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+section[id] {
+    scroll-margin-top: 5rem;
+}
+
+@layer components {
+    .section-container {
+        @apply max-w-3xl mx-auto;
+    }
+
+    .section-padding {
+        @apply py-20 px-6;
+    }
+
+    .nav-link {
+        @apply hover:text-cream-can transition-colors;
+    }
+
+    .form-label {
+        @apply block text-sm font-medium mb-1;
+    }
+
+    .form-input {
+        @apply w-full px-4 py-2 rounded bg-swirl text-kabul placeholder:text-kabul/50 focus:outline-none focus:ring-2 focus:ring-cream-can;
+    }
+
+    .section-heading {
+        @apply text-3xl font-bold mb-10 text-center;
+    }
+
+    .faq-question {
+        @apply font-bold text-lg text-avocado mb-2;
+    }
+
+    .carousel-button {
+        @apply absolute top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-swirl text-kabul font-bold text-xl flex items-center justify-center hover:bg-cream-can transition-colors;
+    }
+
+    .carousel-arrow {
+        @apply -mt-1 text-3xl font-bold
+    }
+}
