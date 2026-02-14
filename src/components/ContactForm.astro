@@ -1,0 +1,73 @@
+<section id="contact" class="section-padding bg-kabul text-swirl">
+  <div class="section-container">
+    <h2 class="section-heading">Contact Us</h2>
+
+    <form action="https://api.web3forms.com/submit" method="POST" class="space-y-5">
+
+      <!-- Web3Forms client-side access key -->
+      <input type="hidden" name="access_key" value="ef63fdc3-0bfa-4661-81d4-dbfa39355282" />
+
+      <!-- Honeypot for bots that are trying to be sneaky -->
+      <input type="checkbox" name="botcheck" class="hidden" style="display:none" />
+
+      <div>
+        <label for="name" class="form-label">Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+          class="form-input"
+          placeholder="Your name"
+        />
+      </div>
+
+      <div>
+        <label for="email" class="form-label">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          class="form-input"
+          placeholder="you@example.com"
+        />
+      </div>
+
+      <div>
+        <label for="subject" class="form-label">Subject</label>
+        <input
+          type="text"
+          id="subject"
+          name="subject"
+          required
+          class="form-input"
+          placeholder="Message subject"
+        />
+      </div>
+
+      <div>
+        <label for="message" class="form-label">Message</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="5"
+          required
+          class="form-input resize-y"
+          placeholder="Your message"
+        ></textarea>
+      </div>
+      
+      <!-- Enable hCaptcha (free alternative to reCaptcha)-->
+      <div class="h-captcha" data-captcha="true"></div>
+
+      <button
+        type="submit"
+        class="w-full py-3 rounded font-bold bg-avocado text-swirl hover:bg-cream-can hover:text-kabul transition-colors"
+      >
+        Send Message
+      </button>
+    </form>
+  </div>
+  <script is:inline src="https://web3forms.com/client/script.js" async defer></script>
+</section>

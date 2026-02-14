@@ -1,8 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{ts,js}",
+  content: ['./src/**/*.{astro,html,js,ts,md,mdx}'],
+  safelist: [
+    'opacity-30',
+    'opacity-60',
   ],
   theme: {
     extend: {

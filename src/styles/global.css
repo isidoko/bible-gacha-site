@@ -1,9 +1,12 @@
+/* Note: if you're on VSCode, you may need to install the Tailwind CSS IntelliSense
+   extension and use "Change Language Mode" (Ctrl+K M) to set this file to Tailwind CSS
+   and get rid of the squigglies */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 section[id] {
-    scroll-margin-top: 5rem;
+  scroll-margin-top: 5rem;
 }
 
 @layer components {

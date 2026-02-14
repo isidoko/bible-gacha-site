@@ -1,0 +1,21 @@
+---
+const base = import.meta.env.BASE_URL;
+---
+
+<section
+  id="about"
+  class="relative flex items-center justify-center min-h-screen bg-cover bg-center pt-16"
+  style=`background-image: url('${base}hero-bg.jpg');`
+>
+  <!-- Overlay for readability against background -->
+  <div class="absolute inset-0 bg-kabul/80"></div>
+
+  <div class="relative z-10 max-w-3xl mx-auto px-6 text-center text-swirl">
+    <h1 class="text-5xl font-bold mb-6">Bible Gacha</h1>
+    <p class="text-lg leading-relaxed">
+      A Christian gacha game where practicing daily habits of Bible study and
+      prayer rewards you with in-game currency you can then use to pull Bible
+      characters, heroes of the faith, and partnered creators from the gacha system.
+    </p>
+  </div>
+</section>

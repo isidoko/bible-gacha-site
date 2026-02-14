@@ -1,0 +1,44 @@
+<section id="contributors" class="section-padding bg-kabul text-swirl">
+  <div class="section-container">
+    <h2 class="section-heading">Contributors</h2>
+
+    <!-- Carousel container populated by TypeScript (see main.ts) -->
+    <div class="relative">
+      <!-- Cards viewport -->
+      <div id="carousel-viewport" class="overflow-hidden">
+        <div id="carousel-track" class="flex transition-transform duration-300 ease-in-out">
+          <!-- Cards injected here by TypeScript -->
+        </div>
+      </div>
+
+      <!-- Previous / Next Card arrows -->
+      <button
+        id="carousel-prev"
+        class="carousel-button -left-4"
+        aria-label="Previous contributor"
+      >
+        <span class="carousel-arrow">
+          &larr;
+        </span>
+      </button>
+      <button
+        id="carousel-next"
+        class="carousel-button -right-4"
+        aria-label="Next contributor"
+      >
+        <span class="carousel-arrow">
+          &rarr;
+        </span>
+      </button>
+    </div>
+
+    <!-- Dot indicators -->
+    <div id="carousel-dots" class="flex justify-center gap-2 mt-6">
+      <!-- Dots injected here by TypeScript -->
+    </div>
+  </div>
+</section>
+
+<script>
+  import '../scripts/carousel.ts';
+</script>

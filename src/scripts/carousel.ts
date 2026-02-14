@@ -1,10 +1,16 @@
-import './style.css';
+import {
+    type Rarity,
+    RARITIES,
+    RARITY_COLORS,
+    contributors as rawContributors,
+} from '../data/contributors';
 
-// Types
+// Resolves rarity for contributors with 'Random' rarity at runtime
+function randomRarity(): Rarity {
+    return RARITIES[Math.floor(Math.random() * RARITIES.length)];
+}
 
-type Rarity = 'R' | 'SR' | 'SSR';
-
-interface Contributor {
+interface ResolvedContributor {
     name: string;
     profile: string;
     roles: string[];
@@ -12,70 +18,14 @@ interface Contributor {
     rarity: Rarity;
 }
 
-// Data
-
-const RARITIES: Rarity[] = ['R', 'SR', 'SSR'];
-
-const RARITY_COLORS: Record<Rarity, string> = {
-    'R': 'border-gray-400 text-gray-400',
-    'SR': 'border-blue-400 text-blue-400',
-    'SSR': 'border-cream-can text-cream-can',
-};
-
-function randomRarity(): Rarity {
-    return RARITIES[Math.floor(Math.random() * RARITIES.length)];
-}
-
-const url = `${import.meta.env.BASE_URL}`;
-
-const contributors: Contributor[] = [
-    {
-    name: 'PhrogPollen',
-    profile: `${url}/phrog.png`,
-    roles: ['Director', 'Artistic Director', 'Artist'],
-    blurb: 'Christian YouTuber and artist.',
-    rarity: 'SSR',
-  },
-  {
-    name: 'Ms. Artist',
-    profile: `${url}/placeholder.png`,
-    roles: ['Artistic Director', 'Artist'],
-    blurb: 'Loves to make gacha character splash art.',
-    rarity: randomRarity(),
-  },
-  {
-    name: 'Mr. Coder',
-    profile: `${url}/placeholder.png`,
-    roles: ['Coder'],
-    blurb: 'Knows many languages, but is most fluent in GDScript and C#.',
-    rarity: randomRarity(),
-  },
-  {
-    name: 'Ms. Writer',
-    profile: `${url}/placeholder.png`,
-    roles: ['Writer', 'Researcher'],
-    blurb: 'Writes stories and reads scripture.',
-    rarity: randomRarity(),
-  },
-  {
-    name: 'Mr. Business',
-    profile: `${url}/placeholder.png`,
-    roles: ['Business', 'Marketing'],
-    blurb: 'Give him five talents and he\'ll come back with ten.',
-    rarity: randomRarity(),
-  },
-  {
-    name: 'Ms. Voice Actor',
-    profile: `${url}/placeholder.png`,
-    roles: ['Voice Actor', 'Musician', 'Social Media'],
-    blurb: 'Her favorite Bible verse is Psalm 33:3.',
-    rarity: randomRarity(),
-  },
-];
+const contributors: ResolvedContributor[] = rawContributors.map((c) => ({
+    ...c,
+    rarity: c.rarity === 'Random' ? randomRarity() : c.rarity,
+}));
 
 // Card rendering
 
-function createCard(contributor: Contributor): string {
+function createCard(contributor: ResolvedContributor): string {
     const colors = RARITY_COLORS[contributor.rarity];
     const borderColor = colors.split(/\s+/)[0];
     const textColor = colors.split(/\s+/).filter(c => c.startsWith('text-'))[0];

@@ -2,11 +2,11 @@
 
 The project showcase website for Thorncrown Games' Bible Gacha. The site is live here: https://isidoko.github.io/bible-gacha-site/
 
-Built with HTML, CSS, [Tailwind CSS](https://tailwindcss.com) (v3), and [TypeScript](https://www.typescriptlang.org/). Bundled with [Vite](https://vitejs.dev/). The contact form is made using [Web3Forms](https://web3forms.com).
+Built with [Astro](https://astro.build/), [Tailwind CSS](https://tailwindcss.com) (v3), and [TypeScript](https://www.typescriptlang.org/). The contact form is made using [Web3Forms](https://web3forms.com).
 
 ## Prerequisites
 
-- [Node.js](https://nodejs.org/) (v18 or later works, this was built with v22)
+- [Node.js](https://nodejs.org/) (v20 or v22 works, this was built with v22)
 - npm (comes with Node.js)
 - A GitHub account with access to the repo
 
@@ -19,25 +19,60 @@ cd bible-gacha-site
 npm install
 ```
 
-Run the local dev server with Vite:
+Run the local dev server with Astro:
 ```bash
 npm run dev
 ```
 
-This opens a local preview (should be at `http://localhost:5173/`). Vite will hot-reload the page when you save changes to files so you can immediately see your changes without needing to refresh the page.
+This opens a local preview (should be at `http://localhost:4321/`). Astro will hot-reload the page when you save changes to files so you can immediately see your changes without needing to refresh the page.
 
 ## Project Structure
-
 ```
 bible-gacha-site/
-├── index.html            ← The entire page (all sections are found here)
 ├── src/
-│   ├── main.ts           ← Contributor carousel data and logic
-│   └── style.css         ← Tailwind directives + custom CSS
-├── public/               ← Images and static assets
-├── tailwind.config.js    ← Custom color palette for use with Tailwind
-└── vite.config.ts        ← Build settings (GitHub Pages base path is set here)
+│   ├── components/           ← One file per page section
+│   │   ├── Navbar.astro
+│   │   ├── Hero.astro
+│   │   ├── FAQ.astro
+│   │   ├── Contributors.astro
+│   │   ├── NewsPreview.astro
+│   │   ├── PrayerRequests.astro
+│   │   ├── ContactForm.astro
+│   │   └── Footer.astro
+│   ├── content/
+│   │   └── news/             ← News articles as Markdown files
+│   ├── data/
+│   │   └── contributors.ts   ← Contributor list (add yourself here!)
+│   ├── layouts/
+│   │   └── BaseLayout.astro  ← Shared HTML wrapper (head, body, etc.)
+│   ├── pages/
+│   │   ├── index.astro       ← Homepage
+│   │   └── news/
+│   │       ├── index.astro   ← News listing page
+│   │       └── [slug].astro  ← Individual news post template
+│   ├── scripts/
+│   │   └── carousel.ts       ← Contributor carousel logic
+│   └── styles/
+│       └── global.css        ← Tailwind directives + custom CSS
+├── public/                   ← Images and static assets
+├── tailwind.config.mjs       ← Custom color palette for use with Tailwind
+└── astro.config.mjs          ← Build settings (GitHub Pages base path is set here)
 ```
+
+## Adding a Contributor
+
+Open `src/data/contributors.ts` and add a new entry to the array:
+```ts
+{
+  name: 'Your Name',
+  profile: `${base}your-image.png`,
+  roles: ['Your Role'],
+  blurb: 'A short bio about yourself.',
+  rarity: 'Random',
+},
+```
+
+Put your profile image in `public/`. If you don't have one, use `placeholder.png`.
 
 ## Deploying to GitHub Pages
 
