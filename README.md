@@ -81,6 +81,6 @@ Building and deploying for GitHub Pages is handled with one command:
 npm run deploy
 ```
 
-This builds the site into the `dist` folder, then pushes the built site to the `gh-pages` branch. After you're finished with your changes, run `npm run deploy`, then run `git push` to push your changes to the repo. GitHub Pages will deploy the built site from the `gh-pages` branch automatically.
+This builds the site into the `dist` folder, then pushes the built site to the `gh-pages` branch. After you're finished with your changes, run `npm run deploy`, and GitHub Pages will deploy the built site from the `gh-pages` branch automatically.
 
 The live site can be found at https://isidoko.github.io/bible-gacha-site/
