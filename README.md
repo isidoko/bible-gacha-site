@@ -65,7 +65,7 @@ Open `src/data/contributors.ts` and add a new entry to the array:
 ```ts
 {
   name: 'Your Name',
-  profile: `${base}your-image.png`,
+  profile: `your-image.png`,
   roles: ['Your Role'],
   blurb: 'A short bio about yourself.',
   rarity: 'Random',

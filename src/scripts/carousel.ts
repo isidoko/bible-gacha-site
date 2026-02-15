@@ -26,6 +26,7 @@ const contributors: ResolvedContributor[] = rawContributors.map((c) => ({
 // Card rendering
 
 function createCard(contributor: ResolvedContributor): string {
+    const url = `${import.meta.env.BASE_URL}`;
     const colors = RARITY_COLORS[contributor.rarity];
     const borderColor = colors.split(/\s+/)[0];
     const textColor = colors.split(/\s+/).filter(c => c.startsWith('text-'))[0];
@@ -41,7 +42,7 @@ function createCard(contributor: ResolvedContributor): string {
                 <!-- Portrait -->
                 <div class="px-4">
                     <img
-                        src="${contributor.profile}"
+                        src="${url}${contributor.profile}"
                         alt="${contributor.name}"
                         class="w-full h-48 object-cover rounded border ${borderColor}"
                     />
