@@ -25,9 +25,9 @@ A: No parts of the finished game will contain AI, whether art, game dev, writing
 &larr;
 </span> </button> <button id="carousel-next" class="carousel-button -right-4" aria-label="Next contributor"> <span class="carousel-arrow">
 &rarr;
-</span> </button> </div> <!-- Dot indicators --> <div id="carousel-dots" class="flex justify-center gap-2 mt-6"> <!-- Dots injected here by TypeScript --> </div> </div> </section> <script type="module">const d=["R","SR","SSR"],b={R:"border-gray-400 text-gray-400",SR:"border-blue-400 text-blue-400",SSR:"border-cream-can text-cream-can"},s="/bible-gacha-site/",f=[{name:"PhrogPollen",profile:`${s}phrog.png`,roles:["Director","Artistic Director","Artist"],blurb:"Christian YouTuber and artist.",rarity:"SSR"},{name:"Ms. Artist",profile:`${s}placeholder.png`,roles:["Artistic Director","Artist"],blurb:"Loves to make gacha character splash art.",rarity:"Random"},{name:"Mr. Coder",profile:`${s}placeholder.png`,roles:["Coder"],blurb:"Knows many languages, but is most fluent in GDScript and C#.",rarity:"Random"},{name:"Ms. Writer",profile:`${s}placeholder.png`,roles:["Writer","Researcher"],blurb:"Writes stories and reads scripture.",rarity:"Random"},{name:"Mr. Business",profile:`${s}placeholder.png`,roles:["Business","Marketing"],blurb:"Give him five talents and he'll come back with ten.",rarity:"Random"},{name:"Ms. Voice Actor",profile:`${s}placeholder.png`,roles:["Voice Actor","Musician","Social Media"],blurb:"Her favorite Bible verse is Psalm 33:3.",rarity:"Random"}];function h(){return d[Math.floor(Math.random()*d.length)]}const u=f.map(e=>({...e,rarity:e.rarity==="Random"?h():e.rarity}));function g(e){const n=b[e.rarity],a=n.split(/\s+/)[0],l=n.split(/\s+/).filter(r=>r.startsWith("text-"))[0];return`
+</span> </button> </div> <!-- Dot indicators --> <div id="carousel-dots" class="flex justify-center gap-2 mt-6"> <!-- Dots injected here by TypeScript --> </div> </div> </section> <script type="module">const c=["R","SR","SSR"],m={R:"border-gray-400 text-gray-400",SR:"border-blue-400 text-blue-400",SSR:"border-cream-can text-cream-can"},b=[{name:"PhrogPollen",profile:"phrog.png",roles:["Director","Artistic Director","Artist"],blurb:"Christian YouTuber and artist.",rarity:"SSR"},{name:"Ms. Artist",profile:"placeholder.png",roles:["Artistic Director","Artist"],blurb:"Loves to make gacha character splash art.",rarity:"Random"},{name:"Mr. Coder",profile:"placeholder.png",roles:["Coder"],blurb:"Knows many languages, but is most fluent in GDScript and C#.",rarity:"Random"},{name:"Ms. Writer",profile:"placeholder.png",roles:["Writer","Researcher"],blurb:"Writes stories and reads scripture.",rarity:"Random"},{name:"Mr. Business",profile:"placeholder.png",roles:["Business","Marketing"],blurb:"Give him five talents and he'll come back with ten.",rarity:"Random"},{name:"Ms. Voice Actor",profile:"placeholder.png",roles:["Voice Actor","Musician","Social Media"],blurb:"Her favorite Bible verse is Psalm 33:3.",rarity:"Random"}];function f(){return c[Math.floor(Math.random()*c.length)]}const d=b.map(e=>({...e,rarity:e.rarity==="Random"?f():e.rarity}));function h(e){const s="/bible-gacha-site/",l=m[e.rarity],n=l.split(/\s+/)[0],r=l.split(/\s+/).filter(a=>a.startsWith("text-"))[0];return`
         <div class="w-full flex-shrink-0 flex justify-center px-4">
-            <div class="w-72 rounded-lg border-2 ${a} bg-kabul/80 overflow-hidden">
+            <div class="w-72 rounded-lg border-2 ${n} bg-kabul/80 overflow-hidden">
                 <!-- Name -->
                 <div class="px-4 pt-4 pb-2">
                     <h3 class="font-bold text-lg">${e.name}</h3>
@@ -36,15 +36,15 @@ A: No parts of the finished game will contain AI, whether art, game dev, writing
                 <!-- Portrait -->
                 <div class="px-4">
                     <img
-                        src="${e.profile}"
+                        src="${s}${e.profile}"
                         alt="${e.name}"
-                        class="w-full h-48 object-cover rounded border ${a}"
+                        class="w-full h-48 object-cover rounded border ${n}"
                     />
                 </div>
 
                 <!-- Roles & Info blurb -->
                 <div class="px-4 py-3">
-                    <p class="text-xs font-semibold ${l} mb-1">
+                    <p class="text-xs font-semibold ${r} mb-1">
                         ${e.roles.join(", ")}
                     </p>
                     <p class="text-sm leading-relaxed">${e.blurb}</p>
@@ -52,13 +52,13 @@ A: No parts of the finished game will contain AI, whether art, game dev, writing
 
                 <!-- Rarity badge -->
                 <div class="px-4 pb-4">
-                    <span class="inline-block text-xs font-bold px-3 py-1 rounded-full border ${a} ${l}">
+                    <span class="inline-block text-xs font-bold px-3 py-1 rounded-full border ${n} ${r}">
                         ★ ${e.rarity}
                     </span>
                 </div>
             </div>
         </div>
-    `}function v(){const e=document.getElementById("carousel-track"),n=document.getElementById("carousel-dots"),a=document.getElementById("carousel-prev"),l=document.getElementById("carousel-next");if(!e||!n||!a||!l)return;e.innerHTML=u.map(g).join("");let r=0;const i=u.length;for(let t=0;t<i;t++){const o=document.createElement("button");o.className="w-3 h-3 rounded-full transition-colors",o.setAttribute("aria-label",`Go to contributor ${t+1}`),o.addEventListener("click",()=>p(t)),n.appendChild(o)}function c(){e.style.transform=`translateX(-${r*100}%)`,n.querySelectorAll("button").forEach((o,m)=>{m===r?o.className="w-3 h-3 rounded-full bg-cream-can transition-colors":o.className="w-3 h-3 rounded-full bg-swirl/40 transition-colors"})}function p(t){r=t,c()}a.addEventListener("click",()=>{r=(r-1+i)%i,c()}),l.addEventListener("click",()=>{r=(r+1)%i,c()}),c()}document.addEventListener("DOMContentLoaded",v);</script> <section id="prayer" class="section-padding"> <div class="section-container"> <h2 class="section-heading">Prayer Requests</h2> <p class="leading-relaxed mb-6">
+    `}function g(){const e=document.getElementById("carousel-track"),s=document.getElementById("carousel-dots"),l=document.getElementById("carousel-prev"),n=document.getElementById("carousel-next");if(!e||!s||!l||!n)return;e.innerHTML=d.map(h).join("");let r=0;const a=d.length;for(let t=0;t<a;t++){const o=document.createElement("button");o.className="w-3 h-3 rounded-full transition-colors",o.setAttribute("aria-label",`Go to contributor ${t+1}`),o.addEventListener("click",()=>u(t)),s.appendChild(o)}function i(){e.style.transform=`translateX(-${r*100}%)`,s.querySelectorAll("button").forEach((o,p)=>{p===r?o.className="w-3 h-3 rounded-full bg-cream-can transition-colors":o.className="w-3 h-3 rounded-full bg-swirl/40 transition-colors"})}function u(t){r=t,i()}l.addEventListener("click",()=>{r=(r-1+a)%a,i()}),n.addEventListener("click",()=>{r=(r+1)%a,i()}),i()}document.addEventListener("DOMContentLoaded",g);</script> <section id="prayer" class="section-padding"> <div class="section-container"> <h2 class="section-heading">Prayer Requests</h2> <p class="leading-relaxed mb-6">
 We'd love for you to pray for Thorncrown Games as we embark on this project
       together. Please pray for our contributors that God guides our hands to
       build works that bring glory to Him, bring the faithful closer to Him,
